@@ -1,4 +1,4 @@
-# quasigram (quasigram)
+# Artemis-Academy
 
 A Quasar Framework app
 

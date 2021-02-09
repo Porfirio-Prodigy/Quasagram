@@ -1,52 +1,76 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header class="text-grey-10 bg-white" bordered>
-      <q-toolbar class="constrain">
-        <q-btn flat round dense icon="eva-camera-outline" to="/camera" size="18px" class="large-screen-only q-mr-sm"/>
-        <q-separator vertical spaced class="large-screen-only"/> <!--SEPARATOR-->
-        <q-toolbar-title class="text-bold">
-          Quasagram
+  <q-layout>
+    <q-header class="text-white bg-yellow-14" bordered>
+      <q-toolbar class="">
+        <q-toolbar-title class="text-logo">
+           <q-avatar>
+              <img src="../images/logofinal.png">
+          </q-avatar>
+          Artemis Academy
         </q-toolbar-title>
-        <q-btn flat round dense icon="eva-home-outline" to="/" size="18px" class="large-screen-only"/>
+         <q-tabs v-model-tab active-color="" indicator-color="transparent">
+           <q-route-tab label="inicio" to="/intro"/>
+        <q-btn-dropdown auto-close stretch flat label="Matérias">
+        <q-list class="">
+                <q-route-tab label="Humanas" to=""/>
+                  <q-separator/>
+                <q-route-tab label="Natureza" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Matemática" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Linguagens" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Concursos" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Faculdade" to="/"/>
+          </q-list>
+        </q-btn-dropdown>
+        <q-separator/>
+        <q-btn-dropdown auto-close stretch flat label="Complementares">
+        <q-list class="">
+                <q-route-tab label="Educação financeira" to="/intro"/>
+                  <q-separator/>
+                <q-route-tab label="Sustentabilidade" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Produção Digital" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Saúde" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Política" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Linguistica" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Avulsos" to="/"/>
+          </q-list>
+        </q-btn-dropdown>
+        <q-separator/>
+        <q-btn-dropdown auto-close stretch flat label="Desenvolvimento">
+        <q-list class="">
+                <q-route-tab label="Pessoal" to="/"/>
+                  <q-separator/>
+                <q-route-tab label="Profissional" to="/"/>
+          </q-list>
+        </q-btn-dropdown>
+        <q-separator/>
+        <!--<q-route-tab label="Enviar" to="/enviar"/>-->
+      </q-tabs>
       </q-toolbar>
     </q-header>
 
-    <q-footer class="bg-white small-screen-only" bordered>
-      <q-tabs
-        v-model="tab" class="text-grey-10" active-color="primary" indicator-color="transparent">
-        <q-route-tab icon="eva-home-outline" to="/" />
-        <q-route-tab icon="eva-camera-outline" to="/camera" />
-      </q-tabs>
-    </q-footer>
-
-    <q-page-container>
+    <q-page-container class="">
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
-
 <script>
-export default {
-  name: 'MainLayout',
-
-  data () {
-    return {
-
-    }
-  }
-}
 </script>
-
 <style lang="sass">
-  .q-toolbar
-    @media (min-width: $breakpoint-sm-min)
-      height: 77px
   .q-toolbar__title
     font-size: 30px
-    @media (max-width: $breakpoint-xs-max)
       text-align: center
-    font-family: 'Grand Hotel', cursive
-  .q-footer
-    .q-tab__icon
-      font-size: 30px
+      font-family: 'Grand Hotel', cursive
+  .background
+    background-color: #FFD700
+  .text-logo
+    font-family: 'Grand Hotel', 'cursive'
 </style>
